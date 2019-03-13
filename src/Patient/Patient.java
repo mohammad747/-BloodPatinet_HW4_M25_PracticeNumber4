@@ -6,13 +6,13 @@ public class Patient {
     private int ID;
     private int age;
     private String bloodData;
-    private BloodData bloodDataObject = new BloodData();
+    private BloodData bloodDataObject = new BloodData("A", "+");
 
     public void setID(int ID) {
         this.ID = ID;
     }
 
-    public int getID() {
+    int getID() {
         return ID;
     }
 
@@ -20,7 +20,7 @@ public class Patient {
         this.age = age;
     }
 
-    public int getAge() {
+    int getAge() {
         return age;
     }
 
@@ -28,20 +28,21 @@ public class Patient {
         this.bloodData = bloodData;
     }
 
-    public String getBloodData() {
+    String getBloodData() {
         return bloodData;
     }
 
-    public Patient(){
+    Patient(){
         this.ID = 0;
         this.age = 0;
         this.bloodData = bloodDataObject.getBloodType()+bloodDataObject.getRhFactor();
     }
 
-    public Patient(int ID, int age, String bloodData){
+    Patient(int ID, int age, String bloodData){
         this.ID = ID;
         this.age = age;
-        this.bloodData = bloodDataObject.getBloodType()+bloodDataObject.getRhFactor();
+
+        this.bloodData = bloodDataObject.setBloodType(bloodData);
     }
 
 

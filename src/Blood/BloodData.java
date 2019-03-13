@@ -2,27 +2,28 @@ package Blood;
 
 public class BloodData {
     private String bloodType;
-    private char rhFactor;
+    private String rhFactor;
 
-    public BloodData(){
+    BloodData(){
         this.bloodType = "O";
-        this.rhFactor = '+';
+        this.rhFactor = "+";
     }
 
-    public BloodData(String bloodType, char rhFactor){
+    public BloodData(String bloodType, String rhFactor){
         this.bloodType = bloodType;
         this.rhFactor = rhFactor;
     }
 
-    public void setRhFactor(char rhFactor) {
+    void setRhFactor(String rhFactor) {
         this.rhFactor = rhFactor;
     }
 
-    public void setBloodType(String bloodType) {
+    public String setBloodType(String bloodType) {
         this.bloodType = bloodType;
+        return bloodType;
     }
 
-    public char getRhFactor() {
+    public String getRhFactor() {
         return rhFactor;
     }
 
